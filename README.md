@@ -1,4 +1,4 @@
-# test_typescript
+# test_ts
 ```
 express-ts@1.0.0
 @types/express@4.17.15
