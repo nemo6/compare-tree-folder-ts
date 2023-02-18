@@ -13,18 +13,7 @@ level:number
 interface index {
 [key: string]: {}
 }
-
-interface NestedObject {
-"@pathx"?:string
-"@size"?:number
-"@type"?:string
-"@red"?:boolean
-"@opacity"?:number
-"@source"?:string
-"@level"?:number
-children?: NestedObject[]
-}
-		
+	
 export default (FA:Input[],FB:Input[]) => {
 
 	function is_included(a: Input[], b: Input[]) {
@@ -83,6 +72,17 @@ export default (FA:Input[],FB:Input[]) => {
 	let b = jsonToChildren({ obj1: a }) as NestedObject[]
 	let c = jsontree(b)
 	return [a,b,c]
+}
+
+interface NestedObject {
+"@pathx"?:string
+"@size"?:number
+"@type"?:string
+"@red"?:boolean
+"@opacity"?:number
+"@source"?:string
+"@level"?:number
+children?: NestedObject[]
 }
 	
 function jsontree(nested_obj:NestedObject[],obj={"str":""},i=0,table:Array<string>=[]){
@@ -167,7 +167,7 @@ function csvToJson(m:Input[]){
 	return obj
 }
 
-function jsonToChildren({ obj1, obj2 = {} }: { obj1: index; obj2?: NestedObject }){
+function jsonToChildren({ obj1, obj2 = {} }:{ obj1: index; obj2?: NestedObject }){
 
 	for( let [key,value] of Object.entries(obj1) ){
 		if( (/@/).test(key) )
@@ -211,7 +211,6 @@ function render(a:string,b:string):string { return `
 <div style="display:flex;">
 	
 	<div style="white-space:pre;">${a}</div>
-
 	<div style="white-space:pre;">${b}</div>
 	
 </div>` }
