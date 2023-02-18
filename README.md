@@ -11,8 +11,10 @@ lodash@4.17.21
 typescript@4.9.4
 ```
 
-https://joshtronic.com/2020/04/20/recursive-functions-in-typescript/
+[Recursive functions in TypeScript](https://joshtronic.com/2020/04/20/recursive-functions-in-typescript/)
 
-https://catchts.com/recursive-ds
+[Recursive data structure](https://catchts.com/recursive-ds)
 
-https://tkdodo.eu/blog/pedantic-index-signatures-in-type-script-4-1
+[Recursive functions in TypeScript](https://tkdodo.eu/blog/pedantic-index-signatures-in-type-script-4-1)
+
+[Fun with advanced TypeScript](https://www.youtube.com/watch?v=nNse0r0aRT8)
