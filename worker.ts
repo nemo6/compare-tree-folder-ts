@@ -21,9 +21,7 @@ export default (FA:Input[],FB:Input[]) => {
 		for (const k in a) {
 
 			if (!_.map(b, "pathx").includes(a[k].pathx))
-			a[k].red = true
-			/* else
-			a[k].red = false */
+				a[k].red = true
 		}
 
 		return a
@@ -38,7 +36,7 @@ export default (FA:Input[],FB:Input[]) => {
 
 		const argv = [[a, ma], [b, mb]]
 
-		function bar(h: number, j: number) {
+		function bar(h:number, j:number) {
 
 			for (const k in argv[h][1]) {
 
@@ -60,11 +58,11 @@ export default (FA:Input[],FB:Input[]) => {
 
 	}
 
-	function mapIn(x: Input[][]) {
+	function mapIn(x:Input[][]) {
 		return [is_included(x[0],x[1]), _.flip(is_included)(x[0],x[1])]
 	}
 
-	function sortP(x: Input[]) {
+	function sortP(x:Input[]) {
 		return _.sortBy(x, "pathx")
 	}
 
@@ -86,36 +84,31 @@ children?: NestedObject[]
 }
 	
 function jsontree(nested_obj:NestedObject[],obj={"str":""},i=0,table:Array<string>=[]){
-	
-	let current_level = 0
 
-	const totalValues = (nestedObjects: NestedObject[]) => {
-	return nestedObjects.reduce(
-		(str, nested_obj: NestedObject,i): string => {
-		
-		console.log(i)
-		
-		if ( nested_obj["@type"] == "file" ){
-			obj.str += `<li title="" class="" id="child" onclick=""><span>size : ${nested_obj["@size"]} | ${formatBytes(nested_obj["@size"] as number)}</span></li>`
-		}
-		else if ( nested_obj["@type"] == "folder" ){
-			const size_folder = ( x => x ?? "" )(nested_obj["@size"])
-			obj.str += `<li class="" id="parent"> <span style="opacity:${nested_obj["@opacity"]}"> <button onclick="foo(this)" title="" class="style_button" >${nested_obj["@pathx"]}</button> <span class="label">${numberWithSpaces(size_folder as number)}</span> <span class="label">${formatBytes(size_folder as number)}</span> </span><ul>`
-		}
+	function rec_reduce(nestedObjects:NestedObject[]) {
+		return nested_obj.reduce(
+			(str,nested_obj:NestedObject,i):string => {
 
-		if (nested_obj.children) {
-		totalValues(nested_obj.children)
-		}
+				if (nested_obj["@type"] == "file") {
+					obj.str += `<li title="" class="" id="child" onclick=""><span>size : ${nested_obj["@size"]} | ${formatBytes(nested_obj["@size"] as number)}</span></li>`
+				}
+				else if (nested_obj["@type"] == "folder") {
+					const size_folder = (x => x ?? "")(nested_obj["@size"])
+					obj.str += `<li class="" id="parent"> <span style="opacity:${nested_obj["@opacity"]}"> <button onclick="foo(this)" title="" class="style_button" >${nested_obj["@pathx"]}</button> <span class="label">${numberWithSpaces(size_folder as number)}</span> <span class="label">${formatBytes(size_folder as number)}</span> </span><ul>`
+				}
 
-		obj.str += `</ul></li>`
+				if (nested_obj.children) {
+					rec_reduce(nested_obj.children)
+				}
 
-		return str
-		},
-		"",
-	);
-	};
+				obj.str += `</ul></li>`
 
-	totalValues(nested_obj)
+				return str
+				
+			}, "" )
+	}
+
+	rec_reduce(nested_obj)
 
 	return obj.str
 
@@ -127,7 +120,7 @@ function csvToJson(m:Input[]){
 
 	for( const x of m ){
 
-		[...x.pathx.split("/")].reduce( (o,v,i,arr) => {
+		;[...x.pathx.split("/")].reduce( (o,v,i,arr) => {
 
 			if( o[v] === undefined ){
 
@@ -155,7 +148,6 @@ function csvToJson(m:Input[]){
 
 				Object.assign(o[v],{ ...w })
 
-
 			}	
 
 			return o[v]
@@ -167,7 +159,7 @@ function csvToJson(m:Input[]){
 	return obj
 }
 
-function jsonToChildren({ obj1, obj2 = {} }:{ obj1: index; obj2?: NestedObject }){
+function jsonToChildren( obj1:index = {}, obj2:NestedObject = {} ){
 
 	for( let [key,value] of Object.entries(obj1) ){
 		if( (/@/).test(key) )
@@ -184,13 +176,12 @@ function jsonToChildren({ obj1, obj2 = {} }:{ obj1: index; obj2?: NestedObject }
 
 			obj2.children.push({})
 			
-			jsonToChildren({ obj1: obj1[k], obj2: obj2.children[n] })
+			jsonToChildren( obj1[k], obj2.children[n] )
 		}
 
 	}
 
 	return obj2.children ?? {}
-
 }
 
 function numberWithSpaces(x:number):string {
