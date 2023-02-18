@@ -15,6 +15,6 @@ typescript@4.9.4
 
 [Recursive data structure](https://catchts.com/recursive-ds)
 
-[Recursive functions in TypeScript](https://tkdodo.eu/blog/pedantic-index-signatures-in-type-script-4-1)
+[Pedantic index signatures in TypeScript](https://tkdodo.eu/blog/pedantic-index-signatures-in-type-script-4-1)
 
 [Fun with advanced TypeScript](https://www.youtube.com/watch?v=nNse0r0aRT8)
