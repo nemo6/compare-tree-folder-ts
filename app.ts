@@ -30,6 +30,16 @@ let style = `<link rel="stylesheet" type="text/css" href="style.css">
 </script>`
 
 ;( async () => {
+	
+	/* const [MAX_A,MAX_B] = await Promise.all([walk_count(VA),walk_count(VB)])
+
+	const [FA,FB] = await Promise.all([
+	walk_update(VA),
+	walk_update(VB),
+	])
+
+	fs.writeFileSync( "temp/E_HDD.json", JSON.stringify(FA,null,2) )
+	fs.writeFileSync( "temp/F_HDD.json", JSON.stringify(FB,null,2) ) */
 
 	let [FA,FB] = [
 	JSON.parse(fs.readFileSync("E_HDD.json","utf8")),
