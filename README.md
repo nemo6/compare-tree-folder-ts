@@ -20,4 +20,4 @@ typescript@4.9.4
 
 # Remove types modules
 
-  npm uninstall --no-save
+    npm uninstall --no-save
