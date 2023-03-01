@@ -18,6 +18,6 @@ typescript@4.9.4
 
 [Fun with advanced TypeScript](https://www.youtube.com/watch?v=nNse0r0aRT8)
 
-# remove types modules
+# Remove types modules
 
   npm uninstall --no-save
