@@ -42,8 +42,8 @@ let style = `<link rel="stylesheet" type="text/css" href="style.css">
 	fs.writeFileSync( "temp/F_HDD.json", JSON.stringify(FB,null,2) ) */
 
 	let [FA,FB] = [
-	JSON.parse(fs.readFileSync("E_HDD.json","utf8")),
-	JSON.parse(fs.readFileSync("F_HDD.json","utf8"))
+	JSON.parse(fs.readFileSync("temp/E_HDD.json","utf8")),
+	JSON.parse(fs.readFileSync("temp/F_HDD.json","utf8"))
 	]
 
 	FA = FA.filter( (x: { pathx: string }) => (/SAVES/).test(x.pathx) )
