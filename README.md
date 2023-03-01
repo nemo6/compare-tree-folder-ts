@@ -17,3 +17,7 @@ typescript@4.9.4
 [Pedantic index signatures in TypeScript](https://tkdodo.eu/blog/pedantic-index-signatures-in-type-script-4-1)
 
 [Fun with advanced TypeScript](https://www.youtube.com/watch?v=nNse0r0aRT8)
+
+# remove types modules
+
+  npm uninstall --no-save
