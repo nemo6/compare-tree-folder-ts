@@ -21,7 +21,7 @@ export default (FA:Input[],FB:Input[]) => {
 		for (const k in a) {
 
 			if (!_.map(b, "pathx").includes(a[k].pathx))
-				a[k].red = true
+			a[k].red = true
 		}
 
 		return a
@@ -36,7 +36,7 @@ export default (FA:Input[],FB:Input[]) => {
 
 		const argv = [[a, ma], [b, mb]]
 
-		function bar(h:number, j:number) {
+		function bar(h: number, j: number) {
 
 			for (const k in argv[h][1]) {
 
@@ -58,16 +58,26 @@ export default (FA:Input[],FB:Input[]) => {
 
 	}
 
-	function mapIn(x:Input[][]) {
+	function mapIn(x: Input[][]) {
 		return [is_included(x[0],x[1]), _.flip(is_included)(x[0],x[1])]
 	}
 
-	function sortP(x:Input[]) {
+	function sortP(x: Input[]) {
 		return _.sortBy(x, "pathx")
 	}
 
+	// _.mixin({mapIn,foo,sortP})
+
+	/* return _([FA,FB])
+	.thru( x => mapIn(x) )
+	.thru( x => foo(x) )
+	.map( sortP )
+	.map( x => jsontree( csvToJson(x) ) )
+	.thru( x => render(x[0],x[1]) )
+	.valueOf() */
+
 	let a = csvToJson(FA)
-	let b = jsonToChildren({ obj1: a }) as NestedObject[]
+	let b = jsonToChildren(a) as NestedObject[]
 	let c = jsontree(b)
 	return [a,b,c]
 }
@@ -82,7 +92,7 @@ interface NestedObject {
 "@level"?:number
 children?: NestedObject[]
 }
-	
+
 function jsontree(nested_obj:NestedObject[],obj={"str":""},i=0,table:Array<string>=[]){
 
 	function rec_reduce(nestedObjects:NestedObject[]) {
@@ -104,13 +114,32 @@ function jsontree(nested_obj:NestedObject[],obj={"str":""},i=0,table:Array<strin
 				obj.str += `</ul></li>`
 
 				return str
-				
+
 			}, "" )
 	}
 
 	rec_reduce(nested_obj)
 
 	return obj.str
+
+	/* console.log(nested_obj["@red"])
+
+	if ( nested_obj["@type"] == "file" ){
+
+		obj.str += `<li title="" class="" id="child" onclick=""><span>size : ${nested_obj["@size"]} | ${formatBytes(nested_obj["@size"] as number)}</span></li>`
+	
+	} else if ( nested_obj["@type"] == "folder" ){
+
+		const size_folder = ( x => x ?? "" )(nested_obj["@size"])
+
+		obj.str += `<li class="" id="parent"> <span style="opacity:${nested_obj["@opacity"]}"> <button onclick="foo(this)" title="" class="style_button" >${nested_obj["@pathx"]}</button> <span class="label">${numberWithSpaces(size_folder as number)}</span> <span class="label">${formatBytes(size_folder as number)}</span> </span> <ul>`
+
+		jsontree(nested_obj.children,obj,i,table)
+
+		obj.str += `</ul></li>`
+
+	}
+	return obj.str */
 
 }
 
@@ -181,7 +210,7 @@ function jsonToChildren( obj1:index = {}, obj2:NestedObject = {} ){
 
 	}
 
-	return obj2.children ?? {}
+	return obj2.children
 }
 
 function numberWithSpaces(x:number):string {
