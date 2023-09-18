@@ -21,3 +21,10 @@ typescript@4.9.4
 # Remove types modules
 
     npm uninstall --no-save
+
+# electron buid
+```
+"electron": "^25.2.0",
+"electron-builder": "^24.4.0",
+"lodash": "^4.17.21",
+```
