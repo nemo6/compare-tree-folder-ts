@@ -23,8 +23,17 @@ typescript@4.9.4
     npm uninstall --no-save
 
 # electron buid
+
 ```
 "electron": "^25.2.0",
 "electron-builder": "^24.4.0",
 "lodash": "^4.17.21",
+```
+
+```
+npm install electron electron-builder
+```
+
+```
+npm run dist
 ```
