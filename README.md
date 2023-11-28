@@ -11,15 +11,15 @@ typescript@4.9.4
 ```
 
 ```
-	"devDependencies": {
-		"@types/lodash": "^4.14.191",
-		"@typescript-eslint/eslint-plugin": "^5.48.1",
-		"@typescript-eslint/parser": "^5.48.1",
-		"lodash": "^4.17.21",
-		"electron": "^22.0.2",
-		"eslint": "^8.31.0",
-		"typescript": "^4.9.4"
-	}
+"devDependencies": {
+"@types/lodash": "^4.14.191",
+"@typescript-eslint/eslint-plugin": "^5.48.1",
+"@typescript-eslint/parser": "^5.48.1",
+"lodash": "^4.17.21",
+"electron": "^22.0.2",
+"eslint": "^8.31.0",
+"typescript": "^4.9.4"
+}
 ```
 
 ```
@@ -31,15 +31,15 @@ typescript@4.9.4
 
 ```
 {
-	"compilerOptions": {
-		"target": "es6",
-		"module": "commonjs",
-		"moduleResolution": "node",
-		"resovleJsonModule": true,
-		"esModuleInterop": true,
-		"strict": true,
-		...
-	}
+"compilerOptions": {
+"target": "es6",
+"module": "commonjs",
+"moduleResolution": "node",
+"resovleJsonModule": true,
+"esModuleInterop": true,
+"strict": true,
+...
+}
 }
 ```
 
