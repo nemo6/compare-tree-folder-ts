@@ -44,6 +44,30 @@ typescript@4.9.4
 }
 ```
 
+# package.json (ts)
+
+```
+"scripts": {
+"build": "npx tsc",
+"prestart": "npm run build",
+"start": "node dist/index.js",
+"preserve": "npm run build",
+"serve": "concurrently \"npx tsc -w\"  \"nodemon dist/index.js\""
+},
+...
+"dependencies": {
+"@types/express": "^4.17.13",
+"@types/node": "^18.7.16",
+"concurrently": "^7.4.0",
+"rimraf": "^3.0.2",
+"typescript": "^4.8.3"
+},
+"devDependencies": {
+"express": "^4.18.2",
+"nodemon": "^2.0.19"
+  }
+```
+
 [Recursive functions in TypeScript](https://joshtronic.com/2020/04/20/recursive-functions-in-typescript/)
 
 [Recursive data structure](https://catchts.com/recursive-ds)
