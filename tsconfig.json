@@ -6,9 +6,15 @@
 	"esModuleInterop": true,
 	"forceConsistentCasingInFileNames": true,
 	"strict": true,
+	"lib": [
+	    "es5", "es6", "dom", "dom.iterable"
+	]
 	"skipLibCheck": true
 	},
+	"include": [
+	],
 	"exclude": [
+		"dist",
 		"node_modules"
 	]
 }
