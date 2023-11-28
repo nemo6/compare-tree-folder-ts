@@ -15,7 +15,7 @@ typescript@4.9.4
 .eslintignore
 ```
 
-# tsconfig.json
+	tsconfig.json
 
 ```
 {
