@@ -10,6 +10,11 @@ lodash@4.17.21
 typescript@4.9.4
 ```
 
+```
+.eslintrc.cjs
+.eslintignore
+```
+
 [Recursive functions in TypeScript](https://joshtronic.com/2020/04/20/recursive-functions-in-typescript/)
 
 [Recursive data structure](https://catchts.com/recursive-ds)
