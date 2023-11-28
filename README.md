@@ -15,6 +15,22 @@ typescript@4.9.4
 .eslintignore
 ```
 
+# tsconfig.json
+
+```
+{
+	"compilerOptions": {
+		"target": "es6",
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"resovleJsonModule": true,
+		"esModuleInterop": true,
+		"strict": true,
+		...
+	}
+}
+```
+
 [Recursive functions in TypeScript](https://joshtronic.com/2020/04/20/recursive-functions-in-typescript/)
 
 [Recursive data structure](https://catchts.com/recursive-ds)
