@@ -14,6 +14,7 @@ typescript@4.9.4
 
 ```
 "devDependencies": {
+
   "@types/lodash": "^4.14.191",
   "@typescript-eslint/eslint-plugin": "^5.48.1",
   "@typescript-eslint/parser": "^5.48.1",
@@ -21,6 +22,7 @@ typescript@4.9.4
   "electron": "^22.0.2",
   "eslint": "^8.31.0",
   "typescript": "^4.9.4"
+
 }
 ```
 
@@ -33,38 +35,49 @@ typescript@4.9.4
 
 ```
 {
+
 "compilerOptions": {
+
   "target": "es6",
   "module": "commonjs",
   "moduleResolution": "node",
   "resovleJsonModule": true,
   "esModuleInterop": true,
   "strict": true
+
   }
+
 }
 ```
 
-# package.json (ts)
+# package.json
 
 ```
 "scripts": {
+
   "build": "npx tsc",
   "prestart": "npm run build",
   "start": "node dist/index.js",
   "preserve": "npm run build",
   "serve": "concurrently \"npx tsc -w\"  \"nodemon dist/index.js\""
+
 }
 ...
 "dependencies": {
+
   "@types/express": "^4.17.13",
   "@types/node": "^18.7.16",
   "concurrently": "^7.4.0",
   "rimraf": "^3.0.2",
   "typescript": "^4.8.3"
+
 },
+
 "devDependencies": {
+
   "express": "^4.18.2",
   "nodemon": "^2.0.19"
+
 }
 ```
 
