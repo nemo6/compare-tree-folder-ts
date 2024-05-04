@@ -30,29 +30,7 @@ typescript@4.9.4
 }
 ```
 
-# package.json ? 1 ?
-
-```
-"devDependencies": {
-
-  "@types/lodash": "^4.14.191",
-  "@typescript-eslint/eslint-plugin": "^5.48.1",
-  "@typescript-eslint/parser": "^5.48.1",
-
-  "lodash": "^4.17.21",
-  "electron": "^22.0.2",
-  "eslint": "^8.31.0",
-  "typescript": "^4.9.4"
-
-}
-```
-
-```
-.eslintrc.cjs
-.eslintignore
-```
-
-# package.json ? 2 ?
+# package.json (ts)
 
 ```
 "scripts": {
@@ -64,21 +42,29 @@ typescript@4.9.4
   "serve": "concurrently \"npx tsc -w\"  \"nodemon dist/index.js\""
 
 }
-...
+
 "dependencies": {
 
   "@types/express": "^4.17.13",
   "@types/node": "^18.7.16",
+
   "concurrently": "^7.4.0",
   "rimraf": "^3.0.2",
-  "typescript": "^4.8.3"
+  "express": "^4.18.2"
 
 },
 
 "devDependencies": {
 
-  "express": "^4.18.2",
-  "nodemon": "^2.0.19"
+  "@types/lodash": "^4.14.191",
+  "@typescript-eslint/eslint-plugin": "^5.48.1",
+  "@typescript-eslint/parser": "^5.48.1",
+
+  "lodash": "^4.17.21",
+  "eslint": "^8.31.0",
+  "typescript": "^4.9.4"
+  "nodemon": "^2.0.19",
+  "electron": "^22.0.2"
 
 }
 ```
