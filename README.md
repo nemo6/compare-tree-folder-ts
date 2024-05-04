@@ -11,12 +11,34 @@ lodash@4.17.21
 typescript@4.9.4
 ```
 
+# tsconfig.json
+
+```
+{
+
+"compilerOptions": {
+
+  "target"            : "es6",
+  "module"            : "commonjs",
+  "moduleResolution"  : "node",
+  "resovleJsonModule" : true,
+  "esModuleInterop"   : true,
+  "strict"            : true
+
+  }
+
+}
+```
+
+# package.json ? 1 ?
+
 ```
 "devDependencies": {
 
   "@types/lodash": "^4.14.191",
   "@typescript-eslint/eslint-plugin": "^5.48.1",
   "@typescript-eslint/parser": "^5.48.1",
+
   "lodash": "^4.17.21",
   "electron": "^22.0.2",
   "eslint": "^8.31.0",
@@ -30,26 +52,7 @@ typescript@4.9.4
 .eslintignore
 ```
 
-# tsconfig.json
-
-```
-{
-
-"compilerOptions": {
-
-  "target": "es6",
-  "module": "commonjs",
-  "moduleResolution": "node",
-  "resovleJsonModule": true,
-  "esModuleInterop": true,
-  "strict": true
-
-  }
-
-}
-```
-
-# package.json
+# package.json ? 2 ?
 
 ```
 "scripts": {
@@ -88,10 +91,6 @@ typescript@4.9.4
 
 [Fun with advanced TypeScript](https://www.youtube.com/watch?v=nNse0r0aRT8)
 
-# Remove types modules
-
-    npm uninstall --no-save
-
 # electron buid
 
 ```
@@ -103,6 +102,11 @@ typescript@4.9.4
 ```
 npm install electron electron-builder
 ```
+
+# Remove types modules
+
+    npm uninstall --no-save
+
 
 ```
 npm run dist
