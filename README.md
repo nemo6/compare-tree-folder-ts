@@ -68,7 +68,7 @@ typescript@4.9.4
 
 }
 ```
-# Links
+# links
 
 [Recursive functions in TypeScript](https://joshtronic.com/2020/04/20/recursive-functions-in-typescript/)
 
