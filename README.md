@@ -65,7 +65,7 @@ typescript@4.9.4
 "devDependencies": {
 "express": "^4.18.2",
 "nodemon": "^2.0.19"
-  }
+}
 ```
 
 [Recursive functions in TypeScript](https://joshtronic.com/2020/04/20/recursive-functions-in-typescript/)
