@@ -9,7 +9,6 @@ eslint@8.31.0
 express@4.18.2
 lodash@4.17.21
 typescript@4.9.4
-
 ```
 
 ```
