@@ -217,20 +217,28 @@ function numberWithSpaces(x:number):string {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".")
 }
 
-function formatBytes( bytes:number, decimals = 3):string {
-  if (bytes === 0) return "0 octets"
-  const k = 1024
-  const dm = decimals < 0 ? 0 : decimals
-  const sizes = ["octets", "ko", "mo", "go", "to", "po", "eo", "zo", "yo"];
-  const i = Math.floor(Math.log(bytes) / Math.log(k))
-  const float = parseFloat((bytes / Math.pow(k, i)).toFixed(dm))
-  return Math.trunc(float) + " " + sizes[i]
+function formatBytes( bytes:number, decimals=3 ):string {
+
+	if (bytes === 0) return "0 octets"
+
+	const k = 1024
+	const dm = decimals < 0 ? 0 : decimals
+	const sizes = ["octets", "ko", "mo", "go", "to", "po", "eo", "zo", "yo"];
+	const i = Math.floor(Math.log(bytes) / Math.log(k))
+	const float = parseFloat((bytes / Math.pow(k, i)).toFixed(dm))
+
+	return Math.trunc(float) + " " + sizes[i]
+
 }
 
-function render(a:string,b:string):string { return `
-<div style="display:flex;">
-	
-	<div style="white-space:pre;">${a}</div>
-	<div style="white-space:pre;">${b}</div>
-	
-</div>` }
+function render( a:string, b:string ):string {
+
+	return `
+	<div style="display:flex;">
+		
+		<div style="white-space:pre;">${a}</div>
+		<div style="white-space:pre;">${b}</div>
+		
+	</div>`
+
+}
