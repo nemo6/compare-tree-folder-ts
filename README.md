@@ -62,7 +62,7 @@ typescript@4.9.4
     
     "lodash": "^4.17.21",
     "eslint": "^8.31.0",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
     "nodemon": "^2.0.19",
     "electron": "^22.0.2"
 
